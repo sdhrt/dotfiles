@@ -13,3 +13,9 @@ map("i", "<C-k>", "<Down>")
 
 map('n', "<Tab>", ":bn<CR>")
 map('n', "<leader>x", ":bd<CR>")
+
+if (vim.bo.filetype == "c")
+    then
+        print("wow")
+        map('n', '<F5>', ":!g++ -g % -o %:r <CR>")
+    end
