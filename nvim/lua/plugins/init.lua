@@ -85,7 +85,6 @@ require("lazy").setup({
                 dependencies = { "rafamadriz/friendly-snippets" },
                 after = "nvim-cmp",
                 config = function()
-                    require("luasnip.loaders.from_vscode").load()
                     require("plugins.luasnip")
                 end
             }
@@ -129,6 +128,12 @@ require("lazy").setup({
             require("plugins.nvimtree")
         end
     },
+    {
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end
+    }
 })
 
 require("plugins.lsp")
