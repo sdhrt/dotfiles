@@ -3,7 +3,7 @@ local mason_lspconfig = require("mason-lspconfig")
 local servers = {
     clangd = {},
     tsserver = {},
-    htmlls = {},
+    html = {},
     jsonls = {},
     cssls = {},
     lua_ls = {
@@ -63,6 +63,10 @@ local on_attach = function(_, bufnr)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
 end
+
+mason_lspconfig.setup({
+    ensure_installed = vim.tbl_keys(servers),
+})
 
 mason_lspconfig.setup_handlers {
     function(server_name)

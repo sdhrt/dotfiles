@@ -47,7 +47,9 @@ require("lazy").setup({
 
     {
         "windwp/nvim-autopairs",
-        config = require("nvim-autopairs").setup(),
+        config = function()
+            require("nvim-autopairs").setup()
+        end
     },
 
     -- Fuzzy Finder (files, lsp, etc)
@@ -96,19 +98,16 @@ require("lazy").setup({
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
+        config = function()
+            require('plugins.lualine')
+        end
         -- See `:help lualine.txt`
-        opts = {
-            winbar = {
-                lualine_a = { 'buffers' },
-                lualine_b = {},
-            },
-            options = {
-                icons_enabled = false,
-                theme = 'ayu_dark',
-                component_separators = '|',
-                section_separators = '',
-            },
-        },
+    },
+    {
+        'kdheepak/tabline.nvim',
+        config = function()
+            require("plugins.tabline")
+        end
     },
     {
         -- Highlight, edit, and navigate code
