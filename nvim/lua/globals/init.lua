@@ -30,5 +30,7 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- highlight on yank
+vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 
 require("globals.mappings")
