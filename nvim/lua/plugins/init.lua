@@ -121,10 +121,14 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        "nvim-neo-tree/neo-tree.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim"
+        },
         config = function()
-            require("plugins.nvimtree")
+            require("plugins.neotree")
         end
     },
     {

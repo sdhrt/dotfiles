@@ -2,10 +2,13 @@ local map = require("globals.utils").map
 
 map("i", "kk", "<Esc>")
 
-map("n", "<C-n>", ":NvimTreeToggle<CR>")
+map("n", "<C-n>", ":NeoTreeFocusToggle<CR>")
 
 map("n", "<leader>fm", ":lua vim.lsp.buf.format()<CR>")
 map("n", "<leader>d", ":lua vim.diagnostic.open_float(0,{scope='line',border='single'})<CR>")
+
+vim.cmd("autocmd filetype c nnoremap <F5> :w <bar> !g++ -Wall % -o %:r.out <CR>")
+vim.cmd("autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 -O2 -Wall % -o %:r.out <CR>")
 
 map("i", "<C-l>", "<Right>")
 map("i", "<C-h>", "<Left>")
