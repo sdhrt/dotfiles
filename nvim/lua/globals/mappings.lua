@@ -18,6 +18,9 @@ map("i", "<C-k>", "<Down>")
 map('n', "<Tab>", ":bn<CR>")
 map('n', "<leader>x", ":bd<CR>")
 
+map('n', "<leader>mm", ":MarkdownPreview<CR>")
+map('n', "<leader>ms", ":MarkdownPreviewStop<CR>")
+
 if (vim.bo.filetype == "c")
 then
     print("wow")

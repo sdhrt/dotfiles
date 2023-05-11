@@ -132,6 +132,13 @@ require("lazy").setup({
         end
     },
     {
+        -- install without yarn or npm
+        "iamcco/markdown-preview.nvim",
+        config = function()
+            vim.fn["mkdp#util#install"]()
+        end
+    },
+    {
         "windwp/nvim-ts-autotag",
     }
 })
