@@ -1,5 +1,7 @@
 local map = require("globals.utils").map
 
+vim.cmd ("command DelSwap !rm -rf ~/.local/state/nvim/swap/*")
+
 map("i", "kk", "<Esc>")
 
 map("n", "<C-n>", ":NeoTreeFocusToggle<CR>")
