@@ -35,6 +35,7 @@ require("lazy").setup({
             { 'williamboman/mason-lspconfig.nvim', },
             {
                 'j-hui/fidget.nvim',
+                tag = 'legacy',
                 config = function()
                     require("fidget").setup()
                 end
