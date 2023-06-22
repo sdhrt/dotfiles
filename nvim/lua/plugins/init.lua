@@ -42,6 +42,12 @@ require("lazy").setup({
             },
             {
                 'folke/neodev.nvim',
+            },
+            {
+                "mfussenegger/nvim-jdtls",
+                config = function()
+                    require("plugins.java")
+                end
             }
         },
     },
