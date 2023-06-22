@@ -6,17 +6,7 @@ local servers = {
     html = {},
     jsonls = {},
     cssls = {},
-    jdtls = {
-        settings = {
-            java = {
-                configuration = {
-                    warnings = {
-                        nonExistentProject = 'ignore'
-                    }
-                }
-            }
-        }
-    },
+    jdtls = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
