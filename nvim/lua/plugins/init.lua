@@ -45,9 +45,7 @@ require("lazy").setup({
             },
             {
                 "mfussenegger/nvim-jdtls",
-                config = function()
-                    require("plugins.java")
-                end
+                ft = { 'java' },
             }
         },
     },

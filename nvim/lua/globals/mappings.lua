@@ -1,12 +1,12 @@
 local map = require("globals.utils").map
 
-vim.cmd ("command DelSwap !rm -rf ~/.local/state/nvim/swap/*")
+vim.api.nvim_create_user_command("DelSwap", "!rm -rf ~/.local/state/nvim/swap/* <CR>", { desc = "Delete swap files" })
 
 map("i", "kk", "<Esc>")
 
 map("n", "<C-n>", ":NeoTreeFocusToggle<CR>")
 
-map("n", "<leader>fm", ":lua vim.lsp.buf.format()<CR>")
+map("n", "<leader>fm", ":Format<CR>")
 map("n", "<leader>d", ":lua vim.diagnostic.open_float(0,{scope='line',border='single'})<CR>")
 
 vim.cmd("autocmd filetype c nnoremap <F5> :w <bar> !gcc -Wall % -o %:r.out <CR>")

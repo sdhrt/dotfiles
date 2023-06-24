@@ -1,8 +1,15 @@
 local mason_lspconfig = require("mason-lspconfig")
 
 local servers = {
-    clangd = {},
-    tsserver = {},
+    clangd = {
+        format = {
+            Enable = true,
+            IndentWidth = 4,
+            TabWidth = 4,
+        }
+    },
+    tsserver = {
+    },
     html = {},
     jsonls = {},
     cssls = {},
