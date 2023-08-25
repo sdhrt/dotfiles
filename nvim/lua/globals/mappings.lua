@@ -4,7 +4,7 @@ vim.api.nvim_create_user_command("DelSwap", "!rm -rf ~/.local/state/nvim/swap/* 
 
 map("i", "kk", "<Esc>")
 
-map("n", "<C-n>", ":NeoTreeFocusToggle<CR>")
+map("n", "<C-n>", ":Neotree toggle<CR>")
 
 map("n", "<leader>fm", ":Format<CR>")
 map("n", "<leader>d", ":lua vim.diagnostic.open_float(0,{scope='line',border='single'})<CR>")
