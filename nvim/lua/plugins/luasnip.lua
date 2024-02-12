@@ -8,6 +8,7 @@ local insert = ls.insert_node
 -- local choice = ls.choice_node
 -- local dynamicn = ls.dynamic_node
 
+require("luasnip.loaders.from_vscode").lazy_load()
 require('luasnip').filetype_extend("javascript", { "javascriptreact", "typescriptreact" })
 require('luasnip').filetype_extend("javascript", { "html" })
 
