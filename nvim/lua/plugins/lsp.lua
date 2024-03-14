@@ -8,8 +8,7 @@ local servers = {
             TabWidth = 4,
         }
     },
-    tsserver = {
-    },
+    tsserver = {},
     html = {},
     jsonls = {},
     cssls = {},

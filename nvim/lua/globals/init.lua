@@ -4,6 +4,9 @@ vim.o.hlsearch = false
 vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
+
+-- Remove ~ from the signcolumn
+vim.opt.fillchars = {eob = " "}
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -31,6 +34,6 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- highlight on yank
-vim.cmd[[au TextYankPost * silent! lua vim.highlight.on_yank()]]
+vim.cmd [[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 
 require("globals.mappings")

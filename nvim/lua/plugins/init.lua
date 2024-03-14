@@ -15,14 +15,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-
     {
-        "sam4llis/nvim-tundra",
+        'datsfilipe/min-theme.nvim',
         config = function()
             require("globals.colorscheme")
         end
     },
-
     {
         'neovim/nvim-lspconfig',
         dependencies = {
@@ -115,6 +113,7 @@ require("lazy").setup({
     {
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
+        build = ":TSUpdate",
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
