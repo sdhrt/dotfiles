@@ -12,7 +12,7 @@ require('nvim-treesitter.configs').setup {
     autotag = {
         enable = true,
     },
-    highlight = { enable = true },
+    highlight = { enable = false },
     indent = { enable = true, disable = { 'python' } },
     incremental_selection = {
         enable = true,
@@ -59,11 +59,11 @@ require('nvim-treesitter.configs').setup {
         },
         swap = {
             enable = true,
-            swap_next = {
-                ['<leader>a'] = '@parameter.inner',
-            },
             swap_previous = {
                 ['<leader>A'] = '@parameter.inner',
+            },
+            swap_next = {
+                ['<leader>a'] = '@parameter.inner',
             },
         },
     },
