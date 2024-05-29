@@ -12,14 +12,20 @@ conform.setup({
 		yaml = { "prettier" },
 		markdown = { "prettier" },
 		lua = { "stylua" },
-		python = { "isort", "black" },
+		python = function(bufnr)
+			if require("conform").get_formatter_info("ruff_format", bufnr).available then
+				return { "ruff_format" }
+			else
+				return { "isort", "black" }
+			end
+		end,
 	},
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>fm", function()
 	conform.format({
 		lsp_fallback = true,
-		async = false,
+		async = true,
 		timeout_ms = 500,
 	})
 end, { desc = "Format file or range (in visual mode)" })
