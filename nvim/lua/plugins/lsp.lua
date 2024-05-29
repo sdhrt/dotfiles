@@ -13,6 +13,26 @@ local servers = {
 	jsonls = {},
 	cssls = {},
 	jdtls = {},
+	rust_analyzer = {
+		assit = {
+			emitMustUse = true,
+		},
+		imports = {
+			granularity = {
+				group = "module",
+			},
+			prefix = "self",
+		},
+		cargo = {
+			buildScripts = {
+				enable = true,
+			},
+		},
+		procMacro = {
+			enable = true,
+		},
+	},
+
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
@@ -29,10 +49,6 @@ require("neodev").setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local on_attach = function(_, bufnr)
-	if _.name == "tsserver" then
-		_.resolved_capabilities.document_formatting = false -- 0.7 and earlier
-		_.server_capabilities.documentFormattingProvider = false -- 0.8 and later
-	end
 
 	-- NOTE: Remember that lua is a real programming language, and as such it is possible
 	-- to define small helper and utility functions so you don't have to repeat yourself

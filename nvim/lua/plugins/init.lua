@@ -13,9 +13,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"felipeagc/fleet-theme-nvim",
+		"sam4llis/nvim-tundra",
 		config = function()
-			vim.cmd("colorscheme fleet")
+			require("globals.colorscheme")
+		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
 		end,
 	},
 	{
@@ -153,12 +159,6 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	},
 	{ -- formatter plugin
 		"stevearc/conform.nvim",
 		opts = {},

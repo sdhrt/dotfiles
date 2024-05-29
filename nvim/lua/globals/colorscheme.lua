@@ -1,1 +1,3 @@
-vim.cmd("colorscheme flexoki-dark")
+vim.g.tundra_biome = "arctic"
+vim.opt.background = "dark"
+vim.cmd("colorscheme tundra")

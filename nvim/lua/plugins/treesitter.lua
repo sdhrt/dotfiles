@@ -9,9 +9,6 @@ require('nvim-treesitter.configs').setup {
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 
-    autotag = {
-        enable = true,
-    },
     highlight = { enable = false },
     indent = { enable = true, disable = { 'python' } },
     incremental_selection = {
