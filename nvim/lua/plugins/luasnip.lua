@@ -30,6 +30,21 @@ ls.add_snippets(nil, {
     },
     cpp = {
         snip({
+                trig = "cp",
+                namr = "Competitive Programming Template",
+                dscr = "Template for C++"
+            },
+            {
+                text({ "#include <bits/stdc++.h>" }),
+                text({ "", "using namespace std;" }),
+                text({ "", "\t" }),
+                text({ "", "int main(){" }),
+                text({ "", "\t" }),
+                insert(0),
+                text({ "", "\t", "return 0;" }),
+                text({ "", "}" })
+            }),
+        snip({
                 trig = " template",
                 namr = "Template",
                 dscr = "Template for C++"
@@ -38,6 +53,22 @@ ls.add_snippets(nil, {
                 text({ "#include <iostream>" }),
                 text({ "", "using namespace std;" }),
                 text({ "", "\t" }),
+                text({ "", "int main(){" }),
+                text({ "", "\t" }),
+                insert(0),
+                text({ "", "\t", "return 0;" }),
+                text({ "", "}" })
+            }),
+        snip({
+                trig = "leetcode",
+                namr = "Leetcode Class Template",
+                dscr = "Template for C++"
+            },
+            {
+                text({ "#include <bits/stdc++.h>" }),
+                text({ "", "using namespace std;" }),
+                text({ "", "\t" }),
+                text({ "", "class Solution { public: };" }),
                 text({ "", "int main(){" }),
                 text({ "", "\t" }),
                 insert(0),

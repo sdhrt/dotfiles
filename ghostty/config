@@ -1,0 +1,10 @@
+window-height = 35
+adjust-cell-height = 10%
+window-width = 130
+theme = Framer
+font-family = "Maple Mono NF"
+cursor-style = block_hollow
+cursor-style-blink = true
+title = ""
+macos-titlebar-style = tabs
+working-directory = "/Users/sdhrt/Developer"

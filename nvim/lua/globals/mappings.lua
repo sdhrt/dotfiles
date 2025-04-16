@@ -8,8 +8,9 @@ map("n", "<C-n>", ":Neotree toggle<CR>")
 
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "open diagnostic" })
 
+vim.cmd("autocmd filetype py nnoremap <C-W> :w <bar> !python3 %<CR>")
 vim.cmd("autocmd filetype c nnoremap <F5> :w <bar> !gcc -Wall % -o %:r.out <CR>")
-vim.cmd("autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 -O2 -Wall % -o %:r.out <CR>")
+vim.cmd("autocmd filetype cpp nnoremap <F5> :w <bar> !clang++ -std=c++17 -O2 -Wall % -o %:r.out <CR>")
 
 map("i", "<C-l>", "<Right>")
 map("i", "<C-h>", "<Left>")

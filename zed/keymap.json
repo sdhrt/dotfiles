@@ -1,0 +1,48 @@
+[
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      "k k": "vim::NormalBefore" // remap k k in insert mode to escape.
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "ctrl-j": "editor::MoveDown",
+      "ctrl-k": "editor::MoveUp",
+      "ctrl-l": "editor::MoveRight",
+      "ctrl-h": "editor::MoveLeft"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space f m": "editor::Format"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal  && !VimWaiting && !menu",
+    "bindings": {
+      "space x": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal  && !VimWaiting && !menu",
+    "bindings": {
+      "tab": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal  && !VimWaiting && !menu",
+    "bindings": {
+      "space s d": "editor::GoToDiagnostic"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space d": "editor::Hover"
+    }
+  }
+]
