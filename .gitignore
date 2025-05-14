@@ -1,3 +1,5 @@
+.DS_Store
+
 configstore/
 nextjs-nodejs/
 create-next-app-nodejs/

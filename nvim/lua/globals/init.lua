@@ -35,4 +35,8 @@ vim.o.completeopt = "menuone,noselect"
 -- highlight on yank
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
+vim.diagnostic.config({
+	virtual_text = true,
+})
+
 require("globals.mappings")
