@@ -1,10 +1,22 @@
 window-height = 35
-adjust-cell-height = 10%
 window-width = 130
+
+adjust-cell-height = 10%
+
 theme = Framer
 font-family = "Maple Mono NF"
+mouse-hide-while-typing = true
+window-save-state = always
+
 cursor-style = block_hollow
 cursor-style-blink = true
-title = ""
+
 macos-titlebar-style = tabs
 working-directory = "/Users/sdhrt/Developer"
+
+keybind = super+o=new_split:right
+
+keybind = ctrl+a>l=resize_split:right,20
+keybind = ctrl+a>h=resize_split:left,21
+
+

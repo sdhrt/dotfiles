@@ -40,3 +40,4 @@ vim.diagnostic.config({
 })
 
 require("globals.mappings")
+require("globals.colorscheme")

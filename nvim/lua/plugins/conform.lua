@@ -6,11 +6,9 @@ conform.setup({
 		typescript = { "prettier" },
 		javascriptreact = { "prettier" },
 		typescriptreact = { "prettier" },
-		css = { "prettier" },
-		html = { "prettier" },
+		go = { "crlfmt" },
+		css = { "cssls" },
 		json = { "prettier" },
-		yaml = { "prettier" },
-		markdown = { "prettier" },
 		lua = { "stylua" },
 		python = function(bufnr)
 			if require("conform").get_formatter_info("ruff_format", bufnr).available then
