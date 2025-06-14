@@ -13,6 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
+        "drewxs/ash.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
         "webhooked/kanso.nvim",
         lazy = true,
         priority = 1000,

@@ -2,6 +2,7 @@
 
 configstore/
 nextjs-nodejs/
+simple-update-notifier/
 create-next-app-nodejs/
 nvim/lazy-lock.json
 nvim/lua/.luarc.json

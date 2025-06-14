@@ -3,7 +3,7 @@
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in insert mode
-      "k k": "vim::SwitchToNormalMode" // remap k k in insert mode to escape.
+      "k k": ["vim::SwitchMode", "Normal"] // remap k k in insert mode to escape.
     }
   },
   {

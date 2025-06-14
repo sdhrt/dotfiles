@@ -1,6 +1,5 @@
 local mason_lspconfig = require("mason-lspconfig")
 
-require("lspconfig").pyright.setup({})
 require("lspconfig").clangd.setup({
     format = {
         Enable = true,
@@ -21,9 +20,15 @@ require("lspconfig").lua_ls.setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+vim.lsp.config("*", {
+    capabilities = capabilities
+})
+
+local servers = { "lua_ls", "pyright", "clangd", "ts_ls", "tailwindcss", "emmet_ls", "cssls", "gopls" }
+
 mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "pyright", "clangd", "ts_ls", "tailwindcss" },
-    capabilities = capabilities,
+    automatic_enable = servers,
+    ensure_installed = servers,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
