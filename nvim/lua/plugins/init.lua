@@ -13,6 +13,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = {
+        },
+    },
+    {
+        "sam4llis/nvim-tundra",
+        lazy = false,
+        priority = 1000,
+    },
+    {
         "drewxs/ash.nvim",
         lazy = false,
         priority = 1000,

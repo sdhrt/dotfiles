@@ -1,6 +1,8 @@
 require('kanso').setup({
     compile = false,  -- enable compiling the colorscheme
     undercurl = true, -- enable undercurls
+    bold = false,
+    italics = false,
     commentStyle = { italic = true },
     functionStyle = {},
     keywordStyle = { italic = true },
@@ -17,12 +19,16 @@ require('kanso').setup({
     overrides = function(colors) -- add/modify highlights
         return {}
     end,
-    theme = "ink",    -- zen ink pearl
+    theme = "zen",    -- zen ink pearl
     background = {    -- map the value of 'background' option to a theme
-        dark = "ink", -- try "ink" !
+        dark = "zen", -- try "ink" !
         light = "pearl"
     },
 })
+
+
+vim.g.tundra_biome = "arctic"
+vim.opt.background = "dark"
 
 -- setup must be called before loading
 vim.cmd("colorscheme kanso")

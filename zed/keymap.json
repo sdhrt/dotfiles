@@ -36,6 +36,12 @@
   {
     "context": "Editor && vim_mode == normal  && !VimWaiting && !menu",
     "bindings": {
+      "K": "editor::Hover"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal  && !VimWaiting && !menu",
+    "bindings": {
       "space s d": "editor::GoToDiagnostic"
     }
   },

@@ -1,2 +1,34 @@
-Host 202.52.0.122
-    ServerAliveInterval 240
+Host office 
+    HostName 202.52.1.57 
+    User office 
+
+Host nn 
+    HostName 192.168.0.104 
+    User user1
+    ProxyJump office 
+
+Host nn2 
+    HostName 172.16.102.1 
+    User user1
+    ProxyJump nn 
+
+Host nn3 
+    HostName 172.16.103.1 
+    User user1
+    ProxyJump nn 
+
+Host nren120 
+    HostName 202.52.0.120
+    User abhimanyu 
+
+Host nren121 
+    HostName 202.52.0.121
+    User siddhartha 
+
+Host nren122 
+    HostName 202.52.0.122
+    User abhimanyu 
+
+Host nren123 
+    HostName 202.52.0.123
+    User siddhartha 

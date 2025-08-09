@@ -1,6 +1,10 @@
 window-height = 35
 window-width = 130
 
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+
 adjust-cell-height = 10%
 
 theme = Framer

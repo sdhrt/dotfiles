@@ -7,3 +7,4 @@ create-next-app-nodejs/
 nvim/lazy-lock.json
 nvim/lua/.luarc.json
 qBittorrent
+zed/.tmp*
