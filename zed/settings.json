@@ -67,7 +67,17 @@
         },
         {
           "paths": [
+            "/home/siddhartha/PasswordManager"
+          ]
+        },
+        {
+          "paths": [
             "/home/siddhartha/venv"
+          ]
+        },
+        {
+          "paths": [
+            "/home/user1/python_venv"
           ]
         }
       ]
@@ -75,6 +85,21 @@
     {
       "host": "nren122",
       "projects": []
+    },
+    {
+      "host": "nn",
+      "projects": [
+        {
+          "paths": [
+            "/home/user1/lora"
+          ]
+        },
+        {
+          "paths": [
+            "/home/user1/lora/__pycache__"
+          ]
+        }
+      ]
     }
   ]
 }

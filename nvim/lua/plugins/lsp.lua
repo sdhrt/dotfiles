@@ -18,6 +18,7 @@ require("lspconfig").lua_ls.setup({
 })
 
 require("lspconfig").postgres_lsp.setup({})
+require("lspconfig").csharp_ls.setup({})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -26,7 +27,7 @@ vim.lsp.config("*", {
     capabilities = capabilities
 })
 
-local servers = { "lua_ls", "pyright", "clangd", "ts_ls", "tailwindcss", "emmet_ls", "cssls", "gopls" }
+local servers = { "lua_ls", "pyright", "clangd", "ts_ls", "tailwindcss", "emmet_ls", "cssls", "gopls", "csharp_ls" }
 
 mason_lspconfig.setup({
     automatic_enable = servers,

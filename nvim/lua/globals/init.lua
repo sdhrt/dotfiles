@@ -4,6 +4,8 @@ vim.o.hlsearch = false
 vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = "a"
+
+vim.o.hlsearch = true
 -- Remove ~ from the signcolumn
 vim.opt.fillchars = { eob = " " }
 -- Sync clipboard between OS and Neovim.
