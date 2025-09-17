@@ -6,3 +6,7 @@
 [".config/tmux/plugins/tpm"]
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm"
+
+[".config/tmux/plugins/tmux-dotbar/dotbar.tmux"]
+    type = "git-repo"
+    url = "https://github.com/vaaleyard/tmux-dotbar"
