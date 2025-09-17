@@ -1,0 +1,19 @@
+window-height = 35
+window-width = 130
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+
+adjust-cell-height = 10%
+
+theme = Framer
+
+font-family = "Maple Mono NF"
+mouse-hide-while-typing = true
+window-save-state = always
+
+cursor-style = block_hollow
+cursor-style-blink = true
+
+macos-titlebar-style = tabs

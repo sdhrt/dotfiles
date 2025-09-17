@@ -1,0 +1,162 @@
+############################################################
+# Colors & Terminal Settings
+############################################################
+
+# Makes color constants available
+autoload -U colors
+colors
+
+# Enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
+
+# Set terminal type
+export TERM=xterm-256color
+
+# Give us access to ^Q
+stty -ixon
+
+
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-search-backward
+bindkey "^N" insert-last-word
+
+############################################################
+# Directory Navigation
+############################################################
+
+# Awesome cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
+
+# Enable extended globbing
+setopt extendedglob
+
+# Allow [ or ] wherever you want
+unsetopt nomatch
+
+
+############################################################
+# Paths & Environment Variables
+############################################################
+
+# Go paths
+export GOPATH="/Users/sdhrt/Developer/go/toolchain"
+
+# General PATH setup
+export PATH="/Library/Frameworks/EclipseSUMO.framework/Versions/1.22.0/EclipseSUMO/bin:/usr/local/bin:/usr/local/sbin:/usr/bin/:/Users/sdhrt/Developer/go/toolchain/bin:$PATH"
+
+# Ensure dotfiles bin directory is loaded first
+PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
+# Git safe path (mkdir .git/safe in repos you trust)
+PATH=".git/safe/../../bin:$PATH"
+
+# Make PATH unique
+export -U PATH
+
+# MySQL
+export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/sdhrt/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Local env
+. "$HOME/.local/bin/env"
+
+# NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+############################################################
+# Homebrew
+############################################################
+
+# Opt out of Homebrew analytics
+# To opt in, unset this in ~/.zshrc.local
+# Learn more: https://docs.brew.sh/Analytics
+export HOMEBREW_NO_ANALYTICS=1
+
+
+############################################################
+# Completion
+############################################################
+
+# Load our own completion functions
+fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
+
+# Completion; use cache if updated within 24h
+autoload -Uz compinit
+if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
+  compinit -d $HOME/.zcompdump
+else
+  compinit -C
+fi
+
+# Disable zsh bundled function mtools command mcd (conflict)
+compdef -d mcd
+
+# Git completion shortcut
+compdef g=git
+
+
+############################################################
+# Functions
+############################################################
+
+# Make directory and change into it
+mcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# Git wrapper
+# - No arguments: `git status`
+# - With arguments: acts like `git`
+g() {
+  if [[ $# -gt 0 ]]; then
+    git "$@"
+  else
+    git status
+  fi
+}
+
+# Git branch prompt
+git_prompt_info() {
+  current_branch=$(git current-branch 2> /dev/null)
+  if [[ -n $current_branch ]]; then
+    echo " %{$fg_bold[green]%}$current_branch%{$reset_color%}"
+  fi
+}
+
+
+############################################################
+# Prompt
+############################################################
+
+# Allow exported PS1 variable to override default prompt
+setopt promptsubst
+
+# PS1='%(?.%F{14}⏺.%F{9}⏺)%f %2~ > '
+source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+
+
+############################################################
+# Aliases
+############################################################
+
+# General
+alias ll="ls -1"
+alias la="ls -1a"
+alias caf="caffeinate -dim"
+alias python="/opt/homebrew/bin/python3"
+alias dev="cd ~/Developer"
+alias servers="cat ~/.ssh/config.d/config.* | grep "Host " | cut -d " " -f 2 | sort"
+
+# Networking / ICT4D
+alias myip="curl http://ipv4.icanhazip.com; echo"
+alias tplink="ssh -L 8080:192.168.0.1:80 office -N"
