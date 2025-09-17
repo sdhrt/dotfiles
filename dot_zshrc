@@ -12,6 +12,8 @@ export CLICOLOR=1
 # Set terminal type
 export TERM=xterm-256color
 
+export EDITOR=nvim
+
 # Give us access to ^Q
 stty -ixon
 
@@ -160,3 +162,7 @@ alias servers="cat ~/.ssh/config.d/config.* | grep "Host " | cut -d " " -f 2 | s
 # Networking / ICT4D
 alias myip="curl http://ipv4.icanhazip.com; echo"
 alias tplink="ssh -L 8080:192.168.0.1:80 office -N"
+
+# Enable completion system
+autoload -U compinit
+compinit
