@@ -1,0 +1,10 @@
+{{- if eq .chezmoi.os "darwin" }}
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519
+{{- end }}
+
+Include ~/.ssh/config.d/config.cas
+Include ~/.ssh/config.d/config.fdv
+Include ~/.ssh/config.d/config.ict4d
