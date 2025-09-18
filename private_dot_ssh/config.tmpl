@@ -1,9 +1,9 @@
-{{- if eq .chezmoi.os "darwin" }}
 Host *
+{{- if eq .chezmoi.os "darwin" }}
     UseKeychain yes
+{{- end }}
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_ed25519
-{{- end }}
 
 Include ~/.ssh/config.d/config.cas
 Include ~/.ssh/config.d/config.fdv
